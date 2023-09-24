@@ -63,7 +63,7 @@ class AVLTree:
 
         balance = self.balance_factor(root)
 
-        # Caso de desequilíbrio à esquerda
+        
         if balance > 1:
             if key < root.left.key:
                 return self.right_rotate(root)
@@ -71,7 +71,7 @@ class AVLTree:
                 root.left = self.left_rotate(root.left)
                 return self.right_rotate(root)
 
-        # Caso de desequilíbrio à direita
+        
         if balance < -1:
             if key > root.right.key:
                 return self.left_rotate(root)
@@ -103,7 +103,7 @@ class AVLTree:
 
         balance = self.balance_factor(root)
 
-        # Caso de desequilíbrio à esquerda
+        
         if balance > 1:
             if self.balance_factor(root.left) >= 0:
                 return self.right_rotate(root)
@@ -111,7 +111,7 @@ class AVLTree:
                 root.left = self.left_rotate(root.left)
                 return self.right_rotate(root)
 
-        # Caso de desequilíbrio à direita
+        
         if balance < -1:
             if self.balance_factor(root.right) <= 0:
                 return self.left_rotate(root)
